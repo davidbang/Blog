@@ -1,0 +1,32 @@
+<html>
+<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
+
+<title> Title </title>
+
+<head>
+<link rel="stylesheet" type="text/css" href="/static/demo.css">
+</head>
+
+<style>
+</style>
+
+<body>
+
+<center>
+<br>
+<h1> Title Page </h1>
+
+<br>
+<br>
+
+<form method="POST">
+<input type="text" name="input" value="">
+<input type="submit" name="post" value="Post">
+</form>
+
+<br>
+</center>
+
+</body>
+
+</html>
