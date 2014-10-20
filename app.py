@@ -6,16 +6,15 @@ app = Flask(__name__)
 @app.route("/", methods=["GET","POST"])
 def index(txt = None):
     if request.method == "GET":
-        return render_template("index.html", txt = None)
+        return render_template("home.html", txt = None)
     else:
         txtbox = request.form["input"]
         button = request.form["enter"]
         if button == None:
             return render_template("index.html", txt = None)
         else:
-            return render_template("title.html", txt = txtbox)
-
-
+            return render_template("home.html", txt = txtbox)
+        
 #main
 if __name__ == "__main__":
     app.debug = True
