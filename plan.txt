@@ -1,0 +1,38 @@
+2 databases
+  1. Posts
+  2. Comments
+
+Index Page
+- Title input
+  - check uniqueness
+    - turn into link
+    - add back to Index page
+
+Title
+
+
+
+
+Posts
+
+#1
+	asdkfahsgdfasdf
+	asdkfasd
+#2
+#3
+
+index --> title
+      - post-# ---> variable to the title
+      	- var indicates wat post to open
+	
+Read and add to html
+blog.txt
+comments.txt
+
+CSS
+Html-python
+-moving between webpages
+Python
+-actual reading
+Databases
+
