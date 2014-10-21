@@ -1,3 +1,5 @@
+{% extends "base.html" %}
+
 {% block title %}
 Blog - Index
 {% endblock title %}
@@ -7,5 +9,16 @@ Index Page
 {% endblock header %}
 
 {% block body %}
-This is the index page body
+<hr>
+<h3>Write a thing!</h3>
+<br>
+<form>
+  <div class="col-lg-4 col-lg-offset-4">
+    <input type="text" class="form-control" name="blogtitle" placeholder="Title">
+    <br>
+    <textarea rows="10" type="text" class="form-control" name="blogtext" placeholder="Talk to us!"></textarea>
+    <br>
+    <input type="submit" name="submit" value="Submit">
+  </div>
+</form>
 {% endblock body %}
