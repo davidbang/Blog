@@ -19,14 +19,12 @@ def get_blog(id):
     c.execute(s)
     conn.commit();
     b = c.fetchall()
-    print b
     return b
 
 def get_comment(id):
-    s = "SELECT name FROM comments WHERE id = " + str(id)
+    s = "SELECT name,body FROM comments WHERE id = " + str(id)
     c.execute(s)
     conn.commit();
     b = c.fetchall()
-    print b
     return b
 
