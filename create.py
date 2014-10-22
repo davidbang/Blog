@@ -4,7 +4,7 @@ import csv
 conn = sqlite3.connect("posts.db")
 c = conn.cursor()
 
-q = "create table posts(id integer, name text)"
+q = "create table posts(id integer, name text, body text)"
 c.execute(q)
 q = "create table comments(id integer, name text, body text)"
 c.execute(q)

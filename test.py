@@ -1,9 +1,9 @@
 import posting
 
-posting.post_blog(1, "blog1")
-posting.post_blog(2, "blog2")
-posting.post_blog(3, "blog3")
-posting.post_blog(4, "blog4")
+posting.post_blog(1, "blog1", "this is content")
+posting.post_blog(2, "blog2", "more content")
+posting.post_blog(3, "blog3", "blah blah blah")
+posting.post_blog(4, "blog4", "testing 1 2 3")
 
 posting.post_comment(1, "com1", "hello")
 posting.post_comment(1, "com2", "goodbye")
