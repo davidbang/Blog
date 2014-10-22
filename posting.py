@@ -21,10 +21,10 @@ def get_blog(id):
     s = "SELECT name,body FROM posts WHERE id = " + str(id)
     c.execute(s)
     results = c.fetchall()
-    title = [a[0] for a in results]
-    body = [a[1] for a in results]
+    blog = [a[0] for a in results]
+    r  = blog + [a[1] for a in results]
     conn.commit()
-    return [title, body]
+    return r
 
 def get_comment(id):
     s = "SELECT name,body FROM comments WHERE id = " + str(id)
@@ -37,4 +37,3 @@ def get_comment(id):
     conn.commit()
     return r
 
-#we also need a "get all posts" and "get all comments"
