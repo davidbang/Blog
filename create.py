@@ -9,6 +9,8 @@ c.execute(q)
 q = "create table comments(id integer, name text, body text)"
 c.execute(q)
 
+#For each post, we need a title of the post, and the text of that post
+#For each comment, we need the blog it's commenting to, a title of the comment, and the text of the comment
 
 #BASE = "INSERT INTO posts VALUES(%(id)s, '%(name)s')"
 #for line in csv.DictReader(open("posts.csv")):

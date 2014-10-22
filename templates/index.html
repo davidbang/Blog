@@ -9,10 +9,13 @@ Index Page
 {% endblock header %}
 
 {% block body %}
-<hr>
-<h3>Write a thing!</h3>
-<br>
-<form class="form_control" action="\blog">
+<div class="col-lg-12">
+  <hr>
+  <h3>Write a thing!</h3>
+  <br>
+</div>
+
+<form class="form_control">
   <div class="col-lg-4 col-lg-offset-4">
     <input type="text" class="form-control" name="blogtitle" placeholder="Title">
     <br>
@@ -21,4 +24,18 @@ Index Page
     <input type="submit" name="submit" value="Submit">
   </div>
 </form>
+
+<div class="col-lg-12">
+  <hr>
+</div>
+
+<div class="col-lg-8 col-lg-offset-2">
+  <h3>Blog Posts</h3>
+  <ul>
+    {% for a in blogs %}
+    <li>{{a}}</li>
+    {% endfor %}
+  </ul>
+</div>
+  
 {% endblock body %}

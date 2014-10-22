@@ -37,3 +37,4 @@ def get_comment(id):
     conn.commit()
     return r
 
+#we also need a "get all posts" and "get all comments"
