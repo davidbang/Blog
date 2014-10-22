@@ -18,7 +18,7 @@ def index():
         id = id + 1
         return getblog(id-1)
     else:
-        return render_template("index.html")
+        return render_template("index.html", blogs = posting.get_all_blogs())
 
 @app.route("/blog/<id>")
 def getblog(id):
