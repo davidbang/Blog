@@ -15,7 +15,7 @@ def index():
         if (blogtitle == ""):
             blogtitle = "Untitled Post"
         #submit sqlite
-        #getblog id=id of post
+        #getblog(id)
         return render_template("title.html", title=blogtitle, text=blogtext, comments = "wE NEED COMMENTS")
     else:
         return render_template("index.html")
@@ -23,7 +23,9 @@ def index():
 @app.route("/blog/<id>")
 def getblog(id=None):
     post = posting.get_blog(id)
-    return render_template("title.html", text=post, comments="WE NEED OMMENTS HERE")
+    title = post[0]
+    text = post[1]
+    return render_template("title.html", title=title, text=text, comments="WE NEED OMMENTS HERE")
     
 if __name__ == "__main__":
     app.debug = True
