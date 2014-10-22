@@ -28,3 +28,4 @@ def get_comment(id):
     b = c.fetchall()
     return b
 
+#we also need a "get all posts" and "get all comments"
