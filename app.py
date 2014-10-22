@@ -1,5 +1,4 @@
 from flask import Flask, render_template, request
-
 import posting
 
 app = Flask(__name__)
@@ -14,18 +13,20 @@ def index():
     if (submit == "Submit" and blogtext != ""):
         if (blogtitle == ""):
             blogtitle = "Untitled Post"
-        #submit sqlite
-        #getblog(id)
-        return render_template("title.html", title=blogtitle, text=blogtext, comments = "wE NEED COMMENTS")
+        global id
+        posting.post_blog(id, blogtitle, blogtext)
+        id = id + 1
+        return getblog(id-1)
     else:
         return render_template("index.html")
 
 @app.route("/blog/<id>")
-def getblog(id=None):
+def getblog(id):
     post = posting.get_blog(id)
-    title = post[0]
-    text = post[1]
-    return render_template("title.html", title=title, text=text, comments="WE NEED OMMENTS HERE")
+    ti = post[0]
+    te = post[1]
+    coms = posting.get_comment(id)
+    return render_template("title.html", title=ti, text=te, comments=coms)
     
 if __name__ == "__main__":
     app.debug = True

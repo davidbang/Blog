@@ -1,7 +1,7 @@
 import sqlite3
 import csv
 
-conn = sqlite3.connect("posts.db")
+conn = sqlite3.connect("posts.db", check_same_thread=False)
 conn.text_factory = str
 c = conn.cursor()
 
