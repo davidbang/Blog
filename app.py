@@ -31,14 +31,15 @@ def index():
 
 @app.route("/blog/<id>")
 def getblog(id):
-    post = posting.get_blog(id)
-    ti = post[0]
-    te = post[1]
-    coms = posting.get_comment(id)
     comment = request.args.get("comment")
     submitc = request.args.get("submitc")
     if (submitc == "Submit" and comment != ""):
         posting.post_comment (id, " ", comment);
+        comment = ""
+    post = posting.get_blog(id)
+    ti = post[0]
+    te = post[1]
+    coms = posting.get_comment(id)
     return render_template("title.html", title=ti, text=te, comments=coms)
     
 if __name__ == "__main__":
