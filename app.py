@@ -32,8 +32,12 @@ def index():
 @app.route("/blog/<id>")
 def getblog(id):
     post = posting.get_blog(id)
-    ti = post[0]
-    te = post[1]
+    try:
+        ti = post[0]
+        te = post[1]
+    except IndexError:
+        print("butts")
+        return('''<h1>oops</h1>''')
     coms = posting.get_comment(id)
     comment = request.args.get("comment")
     submitc = request.args.get("submitc")
