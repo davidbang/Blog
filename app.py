@@ -45,7 +45,7 @@ def getblog(id):
         ti = post[0]
         te = post[1]
     except IndexError:
-        return("oops")
+        return render_template("oops.html")
     coms = posting.get_comment(id)
     return render_template("title.html", title=ti, text=te, comments=coms)
     
