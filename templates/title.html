@@ -5,16 +5,32 @@ Blog - {{title}}
 {% endblock title %}
 
 {% block header %}
+<div class="colo-lg-1 col-lg-offset-3">
+<ul class="nav nav-pills">
+  <li class="active"><a href="\">Index</a></li>
+</ul>
+</div>
+
 {{title}}
+
 {% endblock header %}
 
 {% block body %}
+
 <div class="col-lg-6 col-lg-offset-3">
   <br>
   This is the body
   <br>
   {{text}}
   <hr>
+  <form>
+    <div>
+      <textarea rows="2" type="text" class="form-control" name="comment" placeholder="Write a comment"></textarea>
+      <br>
+      <input type="submit" name="submit" value="Submit">
+      <br>
+    </div>
+  </form>
   <h3>Comments</h3>
   <br>
   {% if comments %}
