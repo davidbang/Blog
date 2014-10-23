@@ -10,7 +10,8 @@ def index():
     blogtitle = request.args.get("blogtitle")
     blogtext = request.args.get("blogtext")
     submit = request.args.get("submit")
-    if (submit == "Submit" and blogtext != ""):
+    if (submit == "Submit" and blogtext != ""
+        and blogtitle not in posting.get_all_blogs()):
         if (blogtitle == ""):
             blogtitle = "Untitled Post"
         global id
@@ -35,8 +36,8 @@ def getblog(id):
     te = post[1]
     coms = posting.get_comment(id)
     comment = request.args.get("comment")
-    submit = request.args.get("submit")
-    if (submit == "Submit" and comment != ""):
+    submitc = request.args.get("submitc")
+    if (submitc == "Submit" and comment != ""):
         posting.post_comment (id, " ", comment);
     return render_template("title.html", title=ti, text=te, comments=coms)
     
