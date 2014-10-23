@@ -34,6 +34,14 @@ def get_all_blogs():
     conn.commit()
     return r
 
+def get_ids ():
+    s = "SELECT id FROM posts"
+    c.execute(s)
+    results = c.fetchall()
+    r = [x[0] for x in results]
+    conn.commit()
+    return r
+
 def get_comment(id):
     s = "SELECT name,body FROM comments WHERE id = " + str(id)
     c.execute(s)
