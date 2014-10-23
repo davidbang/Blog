@@ -32,8 +32,8 @@ Index Page
 <div class="col-lg-8 col-lg-offset-2">
   <h3>Blog Posts</h3>
   <ul>
-    {% for a in blogs %}
-    <li>{{a}}</li>
+    {% for a in blogs%}
+    <li> <a href="/blog/{{a[0]}}">{{a[1]}}</a></li>
     {% endfor %}
   </ul>
 </div>

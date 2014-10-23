@@ -20,3 +20,5 @@ print posting.get_comment(1)
 print posting.get_comment(2)
 print posting.get_comment(3)
 print posting.get_comment(4)
+
+print posting.get_ids()
