@@ -34,7 +34,13 @@ Blog - {{title}}
   <h3>Comments</h3>
   <br>
   {% if comments %}
-  {{comments}}
+  {% for c in comments %}
+  <br>
+  {{c[0]}}: {{c[1]}}
+  <br>
+  {% endfor %}
+  {% else %}
+  No comments here.
   {% endif %}
 </div>
 {% endblock body %}
