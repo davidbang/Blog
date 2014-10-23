@@ -33,8 +33,11 @@ def index():
 def getblog(id):
     comment = request.args.get("comment")
     submitc = request.args.get("submitc")
+    cname = request.args.get("cname")
     if (submitc == "Submit" and comment != ""):
-        posting.post_comment (id, " ", comment);
+        if (cname == ""):
+            cname = "Anonymous"
+        posting.post_comment (id, cname, comment);
         comment = ""
     post = posting.get_blog(id)
     try:

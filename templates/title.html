@@ -1,47 +1,44 @@
-{% extends "base.html" %}
+{% extends "columnedtemplate.html" %}
 
 {% block title %}
 Blog - {{title}}
 {% endblock title %}
 
 {% block header %}
-<div class="colo-lg-1 col-lg-offset-3">
-<ul class="nav nav-pills">
-  <li class="active"><a href="/">Index</a></li>
-</ul>
-</div>
-
 {{title}}
-
+<hr>
 {% endblock header %}
 
-{% block body %}
 
-<div class="col-lg-6 col-lg-offset-3">
+{% block top %}
+{{text}}
+<hr>
+{% endblock top %}
+
+{% block left %}
+<h3>Have a reply?</h3>
+<br>
+<form>
+  <input type="text" class="form-control" name="cname" placeholder="Name">
   <br>
-  This is the body
+  <textarea rows="5" type="text" class="form-control" name="comment" placeholder="Write a comment"></textarea>
   <br>
-  {{text}}
-  <hr>
-  <form method="GET" action="">
-    <div>
-      <textarea rows="2" type="text" class="form-control" name="comment" placeholder="Write a comment"></textarea>
-      <br>
-      <input type="submit" name="submitc" value="Submit">
-      <br>
-    </div>
-  </form>
-  <h3>Comments</h3>
+  <input type="submit" class="btn btn-danger" name="submitc" value="Submit">
   <br>
-  {% if comments %}
-  {% for c in comments %}
-  <br>
-  {{c[0]}}: {{c[1]}}
-  <br>
-  {% endfor %}
-  {% else %}
-  No comments here.
-  {% endif %}
-</div>
-{% endblock body %}
+</form>
+{% endblock left %}
+
+{% block right %}
+<h3>Comments</h3>
+<br>
+{% if comments %}
+{% for c in comments %}
+<br>
+{{c[0]}}: {{c[1]}}
+<br>
+{% endfor %}
+{% else %}
+No comments here.
+{% endif %}
+{% endblock right %}
   
