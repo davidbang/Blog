@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect
 import posting
 
 app = Flask(__name__)
@@ -17,7 +17,7 @@ def index():
         global id
         posting.post_blog(id, blogtitle, blogtext)
         id = id + 1
-        return getblog(id-1)
+        return redirect("/blog/"+str(id-1))
     else:
         global combine
         combine = 0
@@ -36,6 +36,7 @@ def getblog(id):
     if (submitc == "Submit" and comment != ""):
         posting.post_comment (id, " ", comment);
         comment = ""
+        return redirect("/blog/"+str(id))
     post = posting.get_blog(id)
     try:
         ti = post[0]
