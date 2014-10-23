@@ -15,6 +15,14 @@ Blog - {{title}}
   <br>
   {{text}}
   <hr>
+  <form>
+    <div>
+      <textarea rows="2" type="text" class="form-control" name="comment" placeholder="Write a comment"></textarea>
+      <br>
+      <input type="submit" name="submit" value="Submit">
+      <br>
+    </div>
+  </form>
   <h3>Comments</h3>
   <br>
   {% if comments %}
