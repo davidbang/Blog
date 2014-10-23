@@ -34,6 +34,10 @@ def getblog(id):
     ti = post[0]
     te = post[1]
     coms = posting.get_comment(id)
+    comment = request.args.get("comment")
+    submit = request.args.get("submit")
+    if (submit == "Submit" and comment != ""):
+        posting.post_comment (id, " ", comment);
     return render_template("title.html", title=ti, text=te, comments=coms)
     
 if __name__ == "__main__":
